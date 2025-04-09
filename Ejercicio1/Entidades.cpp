@@ -46,7 +46,6 @@ void CentralRegional::getGerentesAlto() const{
     return nullptr;
 }
 
-
 void CentralRegional::getGerentesMedio() const{
     for(int i = 0; i < gerentesMedio.size(); i++){
         std::cout << "Gerente Medio " << i << ": " gerentesMedio[i] -> get_nombre() << std::endl;
@@ -76,6 +75,57 @@ void CentralRegional::agregarEmpresa(shared_ptr<Empresa> empresa){
     empresas.pushback(empresa);
     std::cout<<"Se ha agregado la empresa: " << empresa -> get_nombre() << "a la Central Regional." << std::endl;
     return;
+}
+
+//Funciones de empresa:
+
+Empresa::Empresa(const std::string& nombre, const std::string& direccion_empresa):EntidadOrganizativa(const std::string& nombre_entidad_organizativa){
+    direccion = direccion_empresa;
+}
+
+std::string Empresa::getDepByName(const std::string& nombreDepartamento){
+    for(int i = 0; i <= departamentos.size(); i++){
+        if(nombreDepartamento == departamentos[i] -> get_nombre()){
+            return departamentos[i] -> get_direccion();
+        }
+    }
+    std::cout << "No se ha encontrado un departamento con nombre: " << nombreDepartamento << std::endl;
+    return "";
+}
+
+std::vector<std::shared_ptr<Departamento>> Empresa::getDepNames() const{
+    return departamentos;
+}
+
+void Empresa::agregarDepartamento(std::shared_ptr<Departamento> departamento_nuevo){
+    departamentos().push_back(departamento_nuevo);
+}
+
+//Departamento
+
+int Departamento::contarEmpleados(){
+    return empleados.size();
+}
+
+std::vector<std::shared_ptr<Empleado>> Departamento::getEmployees() const{
+    return empleados;
+}
+
+bool Departamento::contratarEmpleado(std::smart_ptr<Empleado> empleado){
+    empleados.push_back(empleado);
+    std::cout << "Se contrató el empleado: " << empleado << std::endl;
+    return true;
+}
+
+bool Departamento::despedirEmpleado(std::smart_ptr<Empleado> empleado){
+    for(int i = 0; i <= empleados.size(); i++){
+        if(empleado == empleados[i]){
+            empleados.erase(empleados.begin() + i);
+            std::cout << "Se despidió el empleado: " << empleado << std::endl;
+            return true
+        }
+    }
+    return false;
 }
 
 

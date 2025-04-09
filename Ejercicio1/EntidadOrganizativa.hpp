@@ -88,7 +88,7 @@ class Empleado: {
     int ambiguedad;
     float salario;
     public:
-    Empleado(std::string nombre, std::string puesto);
+    Empleado(const std::string& nombre, const std::string& puesto);
     int getAmbiguedad();
     bool updateSalario(float salarioNuevo);
     float getSalario();
