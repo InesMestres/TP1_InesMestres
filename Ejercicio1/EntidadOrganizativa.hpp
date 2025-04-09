@@ -1,39 +1,56 @@
 #ifdef ENTIDADORGANIZATIVA_HPP
 #define ENTIDADORGANIZATIVA_HPP
+
 #include <string>
 #include <vector>
 #include <memory>
 
-//Entidad organizativa tiene relación de herencia con la CentralRegional y con la Empresa
+//Para resolver las dependencias:
+class Empresa;
+class Departamento;
+class GerenteAlto;
+class GerenteMedio;
+
+
+//Entidad organizativa
+//Tiene relación de herencia con la CentralRegional y con la Empresa
 
 class EntidadOrganizativa{
     private:
-    std::string nombre;
-    std::vector<std::shared_ptr<EntidadOrganizativa>> subentidades;
+        std::string nombre;
+        std::vector<std::shared_ptr<EntidadOrganizativa>> subentidades;
     public:
-    EntidadOrganizativa(std::string nombre);
-    void agregar_subentidad(std::shared_ptr<EntidadOrganizativa> subentidad);
-    int contarSubentidades();
-    std::string get_nombre();
+        EntidadOrganizativa(const std::string& nombre);
+        void agregar_subentidad(std::shared_ptr<EntidadOrganizativa> subentidad);
+        int contarSubentidades() const;
+        std::string get_nombre() const;
 };
 
 
-//Central Regional hereda de Entidad Organizativa y tiene elementos compuestos: GerenteMedio y gerenteAlto 
+//Central Regional
+//Hereda de Entidad Organizativa y tiene elementos compuestos: GerenteMedio y gerenteAlto 
 class CentralRegional: public EntidadOrganizativa{
     private:
     std::vector<std::string> paises;
-    int cantidadEmpleados;
+    int cantidadEmpleados = 0;
     std::vector<std::shared_ptr<GerenteAlto>> gerentesAlto;
     std::vector<std::shared_ptr<GerenteMedio>> gerentesMedio;
-    std::vector<std::string> empresas;
+    std::vector<std::shared_ptr<Empresa>> empresas;
 
     public:
+    CentralRegional(const std::string& nombre);
+    //Gets:
     int getCantEmpleados();
     std::string getEmpNames();
-    void getGerentesAlto();
-    void getGerentesMedio();
-};
+    void getGerentesAlto() const;
+    void getGerentesMedio() const;
+    //sets/modificaciones:
+    void agregarPais(std::string pais);
+    void agregarGerenteAlto(shared_ptr<GerenteAlto> gerenteAlto);
+    void agregarGerenteMedio(shared_ptr<GerenteMedio> gerenteMedio);
+    void agregarEmpresa(shared_ptr<Empresa> empresa);
 
+};
 
 
 //hereda de EntidadOrganizativa y esta compuesto por elementos de Departamento. 
@@ -43,10 +60,11 @@ class Empresa: public EntidadOrganizativa{
     std::vector<std::shared_ptr<Departamento>> departamentos;
     public: 
     Empresa(string direccion);
-    std::string getDepByName();
-    std::vector<std::shared_ptr<Departamento>> getDepNames();
-
+    std::string getDepByName(std::string nombreDepartamento& const);
+    std::vector<std::shared_ptr<Departamento>> getDepNames() const;
+    void agregarDepartamento(std::shared_ptr<Departamento>);
 };
+
 
 class Departamento{
     protected:
