@@ -20,7 +20,7 @@ class EntidadOrganizativa{
         std::string nombre;
         std::vector<std::shared_ptr<EntidadOrganizativa>> subentidades;
     public:
-        EntidadOrganizativa(const std::string& nombre);
+        EntidadOrganizativa(const std::string& nombre_entidad_organizativa);
         void agregar_subentidad(std::shared_ptr<EntidadOrganizativa> subentidad);
         int contarSubentidades() const;
         std::string get_nombre() const;
