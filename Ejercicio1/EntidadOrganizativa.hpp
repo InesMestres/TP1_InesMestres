@@ -122,8 +122,4 @@ class LiderEquipo public Manager{
 };
 
 
-
-
-
-
 #endif
