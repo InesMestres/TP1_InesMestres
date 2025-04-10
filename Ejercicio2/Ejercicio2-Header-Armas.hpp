@@ -8,9 +8,8 @@
 class Armas{
     public:
     virtual void usar_arma() = 0;
-    virtual ~ Armas(){}
+    virtual ~Armas() {}
 };
-
 
 
 
@@ -28,10 +27,10 @@ class itemMagico: public Armas{
     itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad_itemMagico);
     std::string get_nombre_itemMagico() const;
     std::string get_elemento_ItemMagico() const;
-    int get_destruccion_itemMagico(std::string nombre_itemMagico) const;
-    std::string get_rareza_itemMagico();
-    int get_durabilidad_itemMagico();
-    void descripcion_itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico,int durabilidad);
+    int get_destruccion_itemMagico() const;
+    std::string get_rareza_itemMagico() const;
+    int get_durabilidad_itemMagico() const;
+    void descripcion_itemMagico();
 };
 
 //Ejemplos de items mágicos:
@@ -72,38 +71,38 @@ class armaDeCombate: public Armas{
     armaDeCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate);
     std::string get_nombre_armaCombate() const;
     std::string get_material_armaCombate() const;
-    int get_destruccion_armaCombate(std::string nombre_itemMagico) const;
-    std::string get_rareza_armaCombate();
-    int get_presicion_armaCombate();
-    void descripcion_armaCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate);
+    int get_destruccion_armaCombate() const;
+    std::string get_rareza_armaCombate() const;
+    int get_precision_armaCombate() const;
+    void descripcion_armaCombate();
 };
 
 
 //Ejemplos de armas de combate: hacha simple, hacha doble, espada, lanza y garrote.
 
-class hachaSimple: public itemMagico{
+class hachaSimple: public armaDeCombate{
     public:
-    hachaSimple():itemMagico("Hacha Simple", "Madera", 4, "Común", 3){}
+    hachaSimple():armaDeCombate("Hacha Simple", "Madera", 4, "Común", 3){}
 };
 
-class hachaDoble: public itemMagico{
+class hachaDoble: public armaDeCombate{
     public:
-    hachaDoble():itemMagico("Hacha Doble", "Metal", 8, "Raro", 5){}
+    hachaDoble():armaDeCombate("Hacha Doble", "Metal", 8, "Raro", 5){}
 };
 
-class espada: public itemMagico{
+class espada: public armaDeCombate{
     public:
-    espada():itemMagico("Espada", "Metal", 10, "Muy Raro", 8){}
+    espada():armaDeCombate("Espada", "Metal", 10, "Muy Raro", 8){}
 };
 
-class lanza: public itemMagico{
+class lanza: public armaDeCombate{
     public:
-    lanza():itemMagico("Lanza", "Madera", 7, "Raro", 2){}
+    lanza():armaDeCombate("Lanza", "Madera", 7, "Raro", 2){}
 };
 
-class garrote: public itemMagico{
+class garrote: public armaDeCombate{
     public:
-    garrote():itemMagico("Garrote", "Madera", 6, "Común", 7){}
+    garrote():armaDeCombate("Garrote", "Madera", 6, "Común", 7){}
 };
 
 #endif

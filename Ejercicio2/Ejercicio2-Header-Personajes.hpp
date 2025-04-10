@@ -13,7 +13,6 @@ class Personaje{
 
 
 
-
 //Clase abstracta: Magos
 
 class mago: public Personaje{
@@ -25,13 +24,13 @@ class mago: public Personaje{
     int vida_mago;
     
     public:
-    Personaje(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago);
+    mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago);
     std::string get_tipo_mago() const;
-    std::string get_nivel_experiencia_mago() const;
-    int get_especialidad_mago(std::string tipo_mago) const;
+    int get_nivel_experiencia_mago() const;
+    std::string get_especialidad_mago() const;
     int get_energia_mago();
     int get_vida_mago();
-    void descripcion_mago(std::string tipo_mago, int experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago);
+    void descripcion_mago();
 };
 
 //Tipos de magos: hechicero, conjurador, brujo y nigromante.
@@ -70,10 +69,10 @@ class guerrero: public Personaje{
     int vida_guerrero;
     
     public:
-    guerrero:Personaje(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string especialidad_guerrero, int energia_guerrero, int vida_guerrero);
+    guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string especialidad_guerrero, int energia_guerrero, int vida_guerrero);
     std::string get_tipo_guerrero() const;
-    std::string get_nivel_experiencia_guerrero() const;
-    int get_cualidad_guerrero(std::string tipo_guerrero) const;
+    int get_nivel_experiencia_guerrero() const;
+    std::string get_cualidad_guerrero() const;
     int get_energia_guerrero();
     int get_vida_guerrero();
     void descripcion_guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string cualidad_guerrero, int energia_guerrero, int vida_guerrero);
