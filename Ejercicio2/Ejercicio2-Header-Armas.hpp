@@ -78,6 +78,7 @@ class armaDeCombate: public Armas{
     void descripcion_armaCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate);
 };
 
+
 //Ejemplos de armas de combate: hacha simple, hacha doble, espada, lanza y garrote.
 
 class hachaSimple: public itemMagico{
