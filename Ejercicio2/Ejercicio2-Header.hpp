@@ -105,13 +105,4 @@ class garrote: public itemMagico{
     garrote():itemMagico("Garrote", "Madera", 6, "Común", 7){}
 };
 
-
-
-//interfaz: virtual Armas
-//salen de ahi dos tipos de armas:
-//items magicos: bastón, libro de hechizos, poción y amuleto.
-//Armas de Combate: hacha simple, hacha doble, espada, lanza y garrote.
-//5 atributos y métodos
-
-
 #endif
