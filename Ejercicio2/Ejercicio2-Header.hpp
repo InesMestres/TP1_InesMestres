@@ -4,13 +4,6 @@
 #include <string>
 
 
-//interfaz: virtual Armas
-//salen de ahi dos tipos de armas:
-//items magicos: bastón, libro de hechizos, poción y amuleto.
-//Armas de Combate: hacha simple, hacha doble, espada, lanza y garrote.
-//5 atributos y métodos
-
-
 //interfaz Armas:
 class Armas{
     public:
@@ -21,7 +14,7 @@ class Armas{
 
 
 
-//Clase abstracta: itemsMagicos
+//Clase abstracta: items Magicos
 
 class itemMagico: public Armas{
     protected:
@@ -37,57 +30,88 @@ class itemMagico: public Armas{
     std::string get_elemento_ItemMagico() const;
     int get_destruccion_itemMagico(std::string nombre_itemMagico) const;
     std::string get_rareza_itemMagico();
+    int get_durabilidad_itemMagico();
     void descripcion_itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico,int durabilidad);
 };
 
 //Ejemplos de items mágicos:
 
 class baston: public itemMagico{
-    private:
-    std::string nombre_itemMagico = "Bastón";
-    std::string elemento_itemMagico = "Tierra";
-    int destruccion_itemMagico = 4;
-    std::string rareza_itemMagico = "Común";
-    int durabilidad = 5;
-
     public:
-    baston:itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad);
+    baston():itemMagico("Bastón", "Tierra", 4, "Común", 5){}
 };
 
 class libroDeHechizos: public itemMagico{
-    private:
-    std::string nombre_itemMagico = "Libro de Hechizos";
-    std::string elemento_itemMagico = "Aire";
-    int destruccion_itemMagico = 10;
-    std::string rareza_itemMagico = "Muy Raro";
-    int durabilidad = 2;
-
     public:
-    baston:itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad);
+    libroDeHechizos():itemMagico("Libro de Hechizos", "Aire", 10, "Muy Raro", 2){}
 };
 
 class pocion: public itemMagico{
-    private:
-    std::string nombre_itemMagico = "Poción";
-    std::string elemento_itemMagico = "Agua";
-    int destruccion_itemMagico = 4;
-    std::string rareza_itemMagico = "Común";
-    int durabilidad = 4;
-
     public:
-    pocion:itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad);
+    pocion():itemMagico("Poción", "Agua", 4, "Común", 4){}
 };
 
 class amuleto: public itemMagico{
-    private:
-    std::string nombre_itemMagico = "Amuleto";
-    std::string elemento_itemMagico = "Tierra";
-    int destruccion_itemMagico = 8;
-    std::string rareza_itemMagico = "Raro";
-    int durabilidad = 3;
+    public:
+    amuleto():itemMagico("Amuleto", "Tierra", 8, "Raro", 3){}
+};
+
+
+
+//Clase abstracta: Armas de Combate
+
+class armaDeCombate: public Armas{
+    protected:
+    std::string nombre_armaCombate;
+    std::string material_armaCombate;
+    int destruccion_armaCombate;
+    std::string rareza_armaCombate;
+    int precision_armaCombate;
 
     public:
-    amuleto:itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad);
+    armaDeCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate);
+    std::string get_nombre_armaCombate() const;
+    std::string get_material_armaCombate() const;
+    int get_destruccion_armaCombate(std::string nombre_itemMagico) const;
+    std::string get_rareza_armaCombate();
+    int get_presicion_armaCombate();
+    void descripcion_armaCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate);
 };
+
+//Ejemplos de armas de combate: hacha simple, hacha doble, espada, lanza y garrote.
+
+class hachaSimple: public itemMagico{
+    public:
+    hachaSimple():itemMagico("Hacha Simple", "Madera", 4, "Común", 3){}
+};
+
+class hachaDoble: public itemMagico{
+    public:
+    hachaDoble():itemMagico("Hacha Doble", "Metal", 8, "Raro", 5){}
+};
+
+class espada: public itemMagico{
+    public:
+    espada():itemMagico("Espada", "Metal", 10, "Muy Raro", 8){}
+};
+
+class lanza: public itemMagico{
+    public:
+    lanza():itemMagico("Lanza", "Madera", 7, "Raro", 2){}
+};
+
+class garrote: public itemMagico{
+    public:
+    garrote():itemMagico("Garrote", "Madera", 6, "Común", 7){}
+};
+
+
+
+//interfaz: virtual Armas
+//salen de ahi dos tipos de armas:
+//items magicos: bastón, libro de hechizos, poción y amuleto.
+//Armas de Combate: hacha simple, hacha doble, espada, lanza y garrote.
+//5 atributos y métodos
+
 
 #endif
