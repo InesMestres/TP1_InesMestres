@@ -6,6 +6,7 @@
 //Funciones Armas
 
 
+
 //Funciones de items magicos:
 
 itemMagico::itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad_itemMagico);
@@ -36,9 +37,36 @@ void itemMagico::descripcion_itemMagico(){
 }
 
 
+//Funciones armas de combate:
 
+armaDeCombate::armaDeCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate){
 
+std::string armaDeCombate::get_nombre_armaCombate() const{
+    return nombre_armaCombate;
+}
 
+std::string armaDeCombate::get_material_armaCombate() const{
+    return material_armaCombate;
+}
+
+int armaDeCombate::get_destruccion_armaCombate() const{
+    return destruccion_armaCombate;
+}
+
+std::string armaDeCombate::get_rareza_armaCombate() const{
+    return rareza_armaCombate;
+}
+
+int armaDeCombate::get_precision_armaCombate() const{
+    return precision_armaCombate;
+}
+
+void armaDeCombate::descripcion_armaCombate(){
+    std::cout << "El arma de combate es: " << nombre_armaCombate << "es de rareza:" << rareza_armaCombate << " , esta hecha de material: " << material_armaCombate << " , genera pérdida de vida de: " << destruccion_armaCombate << ", y tiene una presición de: " <<precision_armaCombate << std::endl;
+    return;
+}
+
+};
 
 
 
