@@ -4,6 +4,9 @@
 #include <string>
 
 
+
+
+
 //interfaz Armas:
 class Personaje{
     public:
@@ -80,9 +83,6 @@ class guerrero: public Personaje{
 
 
 //Tipos de guerreros: barbaro, paladín, caballero, mercenario, gladiador
-
-//    void descripcion_guerrero(tipo_guerrero,nivel_experiencia_guerrero, cualidad_guerrero,energia_guerrero,vida_guerrero);
-
 
 class barbaro: public guerrero{
     public:

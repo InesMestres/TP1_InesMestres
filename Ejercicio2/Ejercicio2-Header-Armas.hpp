@@ -33,7 +33,7 @@ class itemMagico: public Armas{
     void descripcion_itemMagico();
 };
 
-//Ejemplos de items mágicos:
+//Ejemplos de items mágicos: baston, libroDeHechizos, pocion, amuleto
 
 class baston: public itemMagico{
     public:
