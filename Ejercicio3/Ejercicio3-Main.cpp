@@ -71,12 +71,3 @@ La idea es que esta clase deberá de crear un objeto, digamos un caballero, al
 recibir un parámetro que indique que se quiere este tipo de objeto. Luego,
 basándose en conceptos de polimorfismo, esta función devolverá un puntero
 al objeto requerido.*/
-
-class PersonajeFactory{
-    std::shared_ptr<Personaje> crear_personaje();
-    //crear en forma dinámica (run time) los objetos tipo personajes
-    //crear en forma dinámica (run time) los objetos tipo arma
-    //crear en forma dinámica (en run-time) los objetos tipo personajes armados (es decir, personajes que portan armas)
-    //
-
-}

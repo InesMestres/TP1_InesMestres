@@ -2,18 +2,19 @@
 #define PERSONAJES_HPP
 #include <iostream>
 #include <string>
+#include <vector>
+#include <memory>
 
 
+//interfaz de Personajes:
 
-
-
-//interfaz Armas:
 class Personaje{
+    protected:
+    std::vector<std::unique_ptr<Armas>> armas;
     public:
     virtual void esta_presente() = 0;
     virtual ~ Personaje(){}
 };
-
 
 
 //Clase abstracta: Magos
