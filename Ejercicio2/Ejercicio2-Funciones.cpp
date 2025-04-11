@@ -1,11 +1,8 @@
 #include "Ejercicio2-Header-Personajes.hpp"
 #include "Ejercicio2-Header-Armas.hpp"
-
 #include <string>
 
 //Funciones Armas
-
-
 
 //Funciones de items magicos:
 
