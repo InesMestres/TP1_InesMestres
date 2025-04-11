@@ -5,17 +5,17 @@
 
 
 //interfaz Armas:
-class Armas{
+class Arma{
     public:
     virtual void usar_arma() = 0;
-    virtual ~Armas() {}
+    virtual ~Arma() {}
 };
 
 
 
 //Clase abstracta: items Magicos
 
-class itemMagico: public Armas{
+class itemMagico: public Arma{
     protected:
     std::string nombre_itemMagico;
     std::string elemento_itemMagico;
@@ -59,7 +59,7 @@ class amuleto: public itemMagico{
 
 //Clase abstracta: Armas de Combate
 
-class armaDeCombate: public Armas{
+class armaDeCombate: public Arma{
     protected:
     std::string nombre_armaCombate;
     std::string material_armaCombate;

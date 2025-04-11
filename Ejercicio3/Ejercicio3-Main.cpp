@@ -71,3 +71,5 @@ La idea es que esta clase deberá de crear un objeto, digamos un caballero, al
 recibir un parámetro que indique que se quiere este tipo de objeto. Luego,
 basándose en conceptos de polimorfismo, esta función devolverá un puntero
 al objeto requerido.*/
+
+
