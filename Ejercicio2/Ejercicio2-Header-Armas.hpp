@@ -2,6 +2,7 @@
 #define ARMAS_HPP
 #include <iostream>
 #include <string>
+#include <memory>
 
 
 //interfaz Armas:
