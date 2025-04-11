@@ -6,7 +6,7 @@
 
 //Funciones de items magicos:
 
-itemMagico::itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad_itemMagico);
+itemMagico::itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad_itemMagico){}
 
 std::string itemMagico::get_nombre_itemMagico() const{
     return nombre_itemMagico;
@@ -37,6 +37,7 @@ void itemMagico::descripcion_itemMagico(){
 //Funciones armas de combate:
 
 armaDeCombate::armaDeCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate){
+}
 
 std::string armaDeCombate::get_nombre_armaCombate() const{
     return nombre_armaCombate;
@@ -63,12 +64,18 @@ void armaDeCombate::descripcion_armaCombate(){
     return;
 }
 
-};
 
 
 
 
 //Personajes:
+
+
+//Agregar un arma en personaje: 
+void Personaje::agregar_arma(std::unique_ptr<Arma> arma){
+    armas.push_back(std::move(arma));
+}
+    
 
 //Funciones mago:
 mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago): Personaje(){

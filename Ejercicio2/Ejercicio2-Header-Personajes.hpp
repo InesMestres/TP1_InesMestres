@@ -10,10 +10,11 @@
 
 class Personaje{
     protected:
-    std::vector<std::unique_ptr<Armas>> armas;
+    std::vector<std::unique_ptr<Arma>> armas;
     public:
     virtual void esta_presente() = 0;
     virtual ~ Personaje(){}
+    virtual void agregar_arma(std::unique_ptr<Arma> arma);
 };
 
 
@@ -79,7 +80,7 @@ class guerrero: public Personaje{
     std::string get_cualidad_guerrero() const;
     int get_energia_guerrero();
     int get_vida_guerrero();
-    void descripcion_guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string cualidad_guerrero, int energia_guerrero, int vida_guerrero);
+    void descripcion_guerrero();
 };
 
 
