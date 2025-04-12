@@ -4,15 +4,6 @@
 #include <cstdlib>
 #include <ctime>
 
-
-
-struct DatosPersonaje{
-    std::string tipo_personaje;
-    std::vector<std::string> tipos_armas;
-}
-
-
-
 int main(){
 
     std::rand(std::time(nullptr));
@@ -28,13 +19,13 @@ int main(){
     for(int i = 0; i < cantidadMagos; i++){
         std::string tipo_personaje = tipos_magos[rand()%tipos_magos.size()];
         int cantidad_armas = rand() % 3;
-        std::shared_ptr<Personaje> personajeArmado = PersonajeFactory::crear_personaje_armado(tipo_personaje, cantidad_armas);
+        std::shared_ptr<Personaje> personajeArmado = PersonajeFactory::crear_personaje_armado(const DatosPersonaje& datos_personaje);
     }
 
     for(int i = 0; i < cantidadGuerreros; i++){
         std::string tipo_personaje = tipos_guerreros[rand()%tipos_guerreros.size()];
         int cantidad_armas = rand() % 3;
-        std::shared_ptr<Personaje> personajeArmado = PersonajeFactory::crear_personaje_armado(tipo_personaje, cantidad_armas);
+        std::shared_ptr<Personaje> personajeArmado = PersonajeFactory::crear_personaje_armado(const DatosPersonaje& datos_personaje);
     }
 
     return 0;

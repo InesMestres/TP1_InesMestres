@@ -3,6 +3,11 @@
 #include "Ejercicio2-Header-Armas.hpp"
 #include <memory>
 
+struct DatosPersonaje{
+    std::string tipo_personaje;
+    std::vector<std::string> tipos_armas;
+};
+
 class PersonajeFactory {
     private:
         //LLamadas a crear personajes
