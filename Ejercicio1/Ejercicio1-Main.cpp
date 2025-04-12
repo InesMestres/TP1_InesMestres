@@ -1,13 +1,30 @@
 #include "EntidadOrganizativa.hpp"
+#include <iostream>
+#include <string>
+
+struct personaje{
+    std::string tipo_personaje;
+}
+
+struct arma{
+    std::string tipo_arma;
+}
+
+struct personajeArmado{
+    std::string tipo_personaje;
+    int cantidad_armas;
+    tiposDeArmas tipo_arma;
+}
+
+enum class tiposDeArmas {
+
+};
+
+
 
 int main(){
     
-    empleado1.GerenteMedio;
-    empleado2.GerenteMedio;
-    empleado3.GerenteAlto;
-    empleado4.GerenteBajo;
-    empleado5.liderEquipo;
-
+    
     
 
     return 0;
