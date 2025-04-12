@@ -14,7 +14,7 @@ class Personaje{
     public:
     virtual void esta_presente() = 0;
     virtual ~ Personaje(){}
-    virtual void agregar_arma(std::unique_ptr<Arma> arma);
+    virtual void agregar_arma(std::shared_ptr<Arma> arma);
 };
 
 

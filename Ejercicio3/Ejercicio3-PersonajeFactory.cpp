@@ -1,20 +1,11 @@
 #include "Ejercicio3-Personaje-Factory.hpp"
+#include "Ejercicio2-Header-Personajes.hpp"
 #include <memory>
+#include <iomanip>
+#include <string>
+#include <vector>
+#include <stdexcept>
 
-
-/*2.3. Teniendo en cuenta que un personaje “has-a” arma, es decir existe una
-composición entre ellos. Escriba una clase denominada “PersonajeFactory” que:
-i. Permita crear en forma dinámica (en run-time) los objetos tipo
-personajes.
-ii. Permita crear en forma dinámica (en run-time) los objetos tipo armas.
-iii. Permita crear en forma dinámica (en run-time) los objetos tipo
-personajes armados (es decir, personajes que portan armas).
-Se prefiere que estas clases no tengan que ser instanciadas para retornar los
-objetos solicitados y que en lo posible utilicen smart pointers.
-La idea es que esta clase deberá de crear un objeto, digamos un caballero, al
-recibir un parámetro que indique que se quiere este tipo de objeto. Luego,
-basándose en conceptos de polimorfismo, esta función devolverá un puntero
-al objeto requerido.*/
 
 //Creador de personajes: 
 
@@ -88,11 +79,10 @@ std::shared_ptr<Arma> PersonajeFactory::crear_arma(const std::string& tipo_arma)
 
 //Creador de personajes con armas: 
 
-static std::shared_ptr<Personaje> crear_personaje_armado(const DatosPersonaje& datos_personaje){
+std::shared_ptr<Personaje> PersonajeFactory::crear_personaje_armado(const DatosPersonaje& datos_personaje){
     
     std::shared_ptr<Personaje> personaje = crear_personaje(datos_personaje.tipo_personaje);
-    std::vector<std::string> tiposDeArma = {"baston", "libroDeHechizos", "pocion", "amuleto", "hacha simple", "hacha doble", "espada", "lanza", "garrote"};
-
+    
     for(const std::string& tipo_arma : datos_personaje.tipos_armas){
         std::shared_ptr<Arma> arma = crear_arma(tipo_arma);
         personaje -> agregar_arma(std::move(arma));
