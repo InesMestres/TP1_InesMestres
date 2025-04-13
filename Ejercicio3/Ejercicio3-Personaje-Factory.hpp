@@ -11,7 +11,8 @@
 
 struct DatosPersonaje{
     std::string tipo_personaje;
-    std::vector<std::string> tipos_armas;
+    int cantidad_armas;
+    //std::vector<std::string> tipos_armas;
 };
 
 class PersonajeFactory {
@@ -47,7 +48,7 @@ class PersonajeFactory {
         //Funciones para crear personaje, arma y personaje armado:  
         static std::shared_ptr<Personaje> crear_personaje(const std::string& tipo_personaje);
         static std::shared_ptr<Arma> crear_arma(const std::string& tipo_arma);
-        static std::shared_ptr<Personaje> crear_personaje_armado(const DatosPersonaje& datos_personaje);
+        static std::shared_ptr<Personaje> crear_personaje_armado(const std::string& tipo_personaje, int cantidad_personajes);
 
 };
 

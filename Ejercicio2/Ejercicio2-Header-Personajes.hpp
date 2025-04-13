@@ -10,7 +10,7 @@
 
 class Personaje{
     protected:
-    std::vector<std::unique_ptr<Arma>> armas;
+    std::vector<std::shared_ptr<Arma>> armas;
     public:
     virtual void esta_presente() = 0;
     virtual ~ Personaje(){}

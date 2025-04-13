@@ -70,12 +70,11 @@ void armaDeCombate::descripcion_armaCombate(){
 
 //Personajes:
 
+//Personaje funciones: 
 
-//Agregar un arma en personaje: 
-void Personaje::agregar_arma(std::unique_ptr<Arma> arma){
-    armas.push_back(std::move(arma));
-}
-    
+void Personaje::agregar_arma(std::shared_ptr<Arma> arma){
+    armas.push_back(arma);
+}   
 
 //Funciones mago:
 mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago): Personaje(){
