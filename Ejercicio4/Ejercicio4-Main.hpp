@@ -13,6 +13,11 @@ personaje usa “Defensa y Golpe” bloquea el “Golpe Fuerte” haciendo 10 pu
 de daño a quien lanzó el “Golpe Fuerte”. En caso de que los dos personajes
 realicen la misma acción, ningún personaje recibirá daño y se pasa a la siguiente
 ronda de elección.
+
+Interacción: Dado un personaje y un arma, el programa debe indicar el tipo de
+personaje y con qué arma atacó al otro personaje. Pierde el primer jugador que
+llega perder todos sus 100 puntos de vida (Health Points o HP). OPCIONAL: si lo
+desea, añada puntos dependiendo del arma utilizada. 
 */
 
 

@@ -15,9 +15,9 @@ Al igual que en el punto anterior, estos personajes derivan de una interfaz
 derivadas deberán tener al menos 5 atributos y 5 métodos.
 2.3. Considerando que cualquier personaje puede utilizar cualquier arma, realice el
 diagrama UML de clases de esta parte del código.*/
-
 #include <cstdlib>
 #include <ctime>
+
 
 int main(){
 

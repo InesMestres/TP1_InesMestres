@@ -2,7 +2,7 @@
 #include "Ejercicio2-Header-Armas.hpp"
 #include <string>
 
-//Funciones Armas
+//Funciones Armas:
 
 //Funciones de items magicos:
 
