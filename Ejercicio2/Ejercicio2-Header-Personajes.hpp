@@ -11,10 +11,13 @@
 class Personaje{
     protected:
     std::vector<std::shared_ptr<Arma>> armas;
+    int vida_personaje;
     public:
     virtual void esta_presente() = 0;
     virtual ~ Personaje(){}
     virtual void agregar_arma(std::shared_ptr<Arma> arma);
+    virtual int get_vida();
+    virtual int perder_vida(int cantidad_vidas);
 };
 
 

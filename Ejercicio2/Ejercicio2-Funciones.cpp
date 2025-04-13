@@ -66,8 +66,6 @@ void armaDeCombate::descripcion_armaCombate(){
 
 
 
-
-
 //Personajes:
 
 //Personaje funciones: 
@@ -75,6 +73,17 @@ void armaDeCombate::descripcion_armaCombate(){
 void Personaje::agregar_arma(std::shared_ptr<Arma> arma){
     armas.push_back(arma);
 }   
+
+int Personaje::get_vida(){
+    return vida_personaje;
+}
+
+int Personaje::perder_vida(int cantidad_vidas){
+    vida_personaje -= cantidad_vidas;
+    if(vida_personaje <= 0){vida_personaje = 0;}
+}
+
+
 
 //Funciones mago:
 mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago): Personaje(){
