@@ -23,11 +23,17 @@ diagrama UML de clases de esta parte del código.*/
 
 int main(){
 
-    std::shared_ptr<Arma> arma_magica = std::dynamic_pointer_cast<itemMagico>();
+    std::shared_ptr<Arma> arma_magica = std::make_shared<amuleto>();
     arma_magica -> usar_arma();
+
+    std::shared_ptr<Arma> arma_combate = std::make_shared<espada>();
+    arma_combate -> usar_arma();
     
     std::shared_ptr<Personaje> mago = std::make_shared<nigromante>();
     mago -> esta_presente();
+
+    std::shared_ptr<Personaje> guerrero = std::make_shared<caballero>();
+    guerrero -> esta_presente();
 
     return 0;
 }
