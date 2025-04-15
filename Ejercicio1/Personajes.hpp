@@ -33,8 +33,8 @@ protected:
 
 public:
     Personaje(const std::string& tipo, int vida);
-    virtual void esta_presente() = 0;
     std::string get_tipo_personaje() const;
+    virtual void esta_presente() = 0;
     int get_vida();
     virtual void agregar_arma(std::shared_ptr<Arma> arma);
     virtual int perder_vida(int cantidad_vidas);
@@ -90,6 +90,7 @@ class hechicero : public mago{
         hechicero() : mago("Hechicero", 4, "Magia elemental", 6, 100), vestimenta("Manto"), gorro("Sombrero"){}
         std::string get_vestimenta() const;
         std::string get_gorro() const;
+        void esta_presente();
 };
 
 class conjurador : public mago{
@@ -100,6 +101,7 @@ class conjurador : public mago{
         conjurador() : mago("Conjurador", 2, "Comunicación con criaturas", 5, 100), sinonimo("Exorcista"), riesgo("Aislamiento"){}
         std::string get_sinonimo() const;
         std::string get_riesgo() const;
+        void esta_presente();
     };
 
 class brujo : public mago{
@@ -110,7 +112,7 @@ class brujo : public mago{
         brujo() : mago("Brujo", 8, "Magia oscura", 7, 100), cualidad("Buscador de conocimiento"), epoca("Siglo XIV") {}
         std::string get_cualidad() const;
         std::string get_epoca() const;
-
+        void esta_presente();
 };
 
 class nigromante : public mago{
@@ -121,6 +123,7 @@ class nigromante : public mago{
         nigromante() : mago("nigromante", 10, "Muerte", 6, 100), cualidad("Paranoico"), pais("Persia"){}
         std::string get_cualidad() const;
         std::string get_pais() const;
+        void esta_presente();
 }; 
 
 
@@ -172,6 +175,7 @@ class barbaro : public guerrero{
         barbaro() : guerrero("Barbaro", 8, "Fuerza y resistencia", 9, 100), nombre_rey("Alarico"), ira(100){}
         std::string get_nombre_rey() const;
         int get_ira() const;
+        void esta_presente();
 };
 
 class paladin : public guerrero{
@@ -182,6 +186,7 @@ class paladin : public guerrero{
         paladin() : guerrero("Paladín", 10, "Magia", 8, 100), prioridad("Justicia"), acceso("Grandes Hechizos") {}
         std::string get_prioridad() const;
         std::string get_acceso() const;
+        void esta_presente();
 };
 
 class caballero : public guerrero{
@@ -192,6 +197,7 @@ class caballero : public guerrero{
         caballero() : guerrero("Caballero", 5, "Noble y disciplinado", 5, 100), nombre_caballo("Chocolate"), material_armadura("Hierro") {}
         std::string get_nombre_caballo() const;
         std::string get_material_armadura() const;
+        void esta_presente();
 };
 
 class mercenario : public guerrero{
@@ -202,6 +208,7 @@ class mercenario : public guerrero{
         mercenario() : guerrero("Mercenario", 1, "Práctivo", 7, 100), motivacion("Beneficio Económico"), contratante("Países con ejercitos insuficientes") {}
         std::string get_motivacion() const;
         std::string get_contratante() const;
+        void esta_presente();
 };
 
 class gladiador : public guerrero{
@@ -212,6 +219,7 @@ class gladiador : public guerrero{
     gladiador() : guerrero("Gladiador", 4, "Combate con bestias", 6, 100), monstruos_vencidos(60), ciudad("Roma") {}
     int get_monstruos_vencidos() const;
     std::string get_ciudad() const;
+    void esta_presente();
 };
 
 #endif

@@ -4,6 +4,7 @@
 
 //Personajes:
 
+
 //Personaje funciones: 
 
 Personaje::Personaje(const std::string& tipo, int vida) : tipo_personaje(tipo), vida_personaje(vida) {}
@@ -51,13 +52,10 @@ int mago::get_energia_mago(){
     return energia_mago;
 }
 
-void mago::esta_presente(){
-    std::cout << "El mago es un " << tipo_personaje << " , tiene nivel de experiencia: " << nivel_experiencia_mago << " , se especializa en: " << especialidad_mago << " ,en este momento tiene energía: " << energia_mago << " y vida: " << vida_personaje << std::endl;
-    return;
-}
 
 
-//FUNCIONES PERSONALIZADAS DE CADA TIPO DE MAGOS: 
+//FUNCIONES PERSONALIZADAS DE CADA TIPO DE MAGO:
+
 
 //Hechicero: 
 std::string hechicero::get_vestimenta() const{
@@ -65,6 +63,10 @@ std::string hechicero::get_vestimenta() const{
 }
 std::string hechicero::get_gorro() const{
     return gorro;
+}
+void hechicero::esta_presente(){
+    std::cout << "Tipo de mago: " << tipo_personaje << " - Nivel de experiencia: " << nivel_experiencia_mago << " - Especialización: " << especialidad_mago << "Vestimenta: " << vestimenta << " - Accesorio: " << gorro << " Energía: " << energia_mago << " - Vida: " << vida_personaje << std::endl;
+    return;
 }
 
 //Conjurador:
@@ -74,6 +76,10 @@ std::string conjurador::get_sinonimo() const{
 std::string conjurador::get_riesgo() const{
     return riesgo;
 }
+void conjurador::esta_presente(){
+    std::cout << "Tipo de mago: " << tipo_personaje << " - Sinónimo: " << sinonimo << " - Nivel de experiencia: " << nivel_experiencia_mago << " - Especialización: " << especialidad_mago << " Energía: " << energia_mago << " - Vida: " << vida_personaje << " - Riesgo/Debilidad: " << riesgo << std::endl;
+    return;
+}
 
 //Brujo:
 std::string brujo::get_cualidad() const{
@@ -81,6 +87,10 @@ std::string brujo::get_cualidad() const{
 }
 std::string brujo::get_epoca() const{
     return epoca;
+}
+void brujo::esta_presente(){
+    std::cout << "Tipo de mago: " << tipo_personaje << " - Nivel de experiencia: " << nivel_experiencia_mago << " - Especialización: " << especialidad_mago << " - Cualidad Brujo: " << cualidad << " - Época de orígen: " << epoca << " - Energía: " << energia_mago << " - Vida: " << vida_personaje << std::endl;
+    return;
 }
 
 //Nigromante:
@@ -90,6 +100,12 @@ std::string nigromante::get_cualidad() const{
 std::string nigromante::get_pais() const{
     return pais;
 }
+void nigromante::esta_presente(){
+    std::cout << "Tipo de mago: " << tipo_personaje << " - Nivel de experiencia: " << nivel_experiencia_mago << " - Especialización: " << especialidad_mago << " - País de origen: " << pais << " - Cualidad: " << cualidad << " - Energía: " << energia_mago << " - Vida: " << vida_personaje << std::endl;
+    return;
+}
+
+
 
 
 //GUERREROS: 
@@ -125,6 +141,7 @@ std::string barbaro::get_nombre_rey() const{
 int barbaro::get_ira() const{
     return ira;
 }
+
 
 //Paladin:
 std::string paladin::get_prioridad() const{
