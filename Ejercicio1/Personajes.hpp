@@ -32,7 +32,7 @@ protected:
     int vida_personaje;
 
 public:
-    Personaje(std::string tipo, int vida);
+    Personaje(const std::string& tipo, int vida);
     virtual void esta_presente() = 0;
     std::string get_tipo_personaje() const;
     int get_vida();

@@ -25,12 +25,11 @@ int Personaje::perder_vida(int cantidad_vidas){
     if(vida_personaje <= 0){vida_personaje = 0;}
 }
 
-
 void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {
     atacado->perder_vida(10);
     if (armas.size() > 0) {
         std::shared_ptr<Arma> arma_elegida = armas[std::rand() % armas.size()];
-        std::cout << "El " << tipo_personaje << " ataca con " << arma_elegida.get_tipo_arma() << " y hace 10 puntos de daño" << std::endl;
+        std::cout << "El " << tipo_personaje << " ataca con " << arma_elegida -> get_nombre() << " y hace 10 puntos de daño" << std::endl;
     } else {
         std::cout << "El " << tipo_personaje << " ataca y hace 10 puntos de daño" << std::endl;
     }
@@ -38,8 +37,7 @@ void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {
 
 
 //Funciones mago:
-mago::mago(const std::string& tipo_mago, int nivel_experiencia_mago, const std::string& especialidad_mago, int energia_mago, int vida_mago): Personaje(){
-}
+mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago) : Personaje(tipo_mago, vida_mago), nivel_experiencia_mago(nivel_experiencia_mago), especialidad_mago(especialidad_mago), energia_mago(energia_mago) {}
 
 int mago::get_nivel_experiencia_mago() const{
     return nivel_experiencia_mago;
@@ -60,8 +58,7 @@ void mago::descripcion_mago(){
 
 //Funciones Guerreros:
 
-guerrero::guerrero(const std::string& tipo_guerrero, int nivel_experiencia_guerrero, const std::string& especialidad_guerrero, int energia_guerrero, int vida_guerrero){
-}
+guerrero::guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string cualidad_guerrero, int energia_guerrero, int vida_guerrero) : Personaje(tipo_guerrero, vida_guerrero), nivel_experiencia_guerrero(nivel_experiencia_guerrero), cualidad_guerrero(cualidad_guerrero), energia_guerrero(energia_guerrero){}
 
 int guerrero::get_nivel_experiencia_guerrero() const{
     return nivel_experiencia_guerrero;
