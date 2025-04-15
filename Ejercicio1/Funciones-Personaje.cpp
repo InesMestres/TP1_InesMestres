@@ -118,5 +118,42 @@ void guerrero::esta_presente(){
 
 //FUNCIONES PERSONALIZADAS DE CADA TIPO DE GUERRERO: 
 
+//Barbaro:
+std::string barbaro::get_nombre_rey() const{
+    return nombre_rey;
+}
+int barbaro::get_ira() const{
+    return ira;
+}
 
+//Paladin:
+std::string paladin::get_prioridad() const{
+    return prioridad;
+}
+std::string paladin::get_acceso() const{
+    return acceso;
+}
 
+//Caballero:
+std::string caballero::get_nombre_caballo() const{
+    return nombre_caballo;
+}
+std::string caballero::get_material_armadura() const{
+    return material_armadura;
+}
+
+//Mercenario:
+std::string mercenario::get_motivacion() const{
+    return motivacion;
+}
+std::string mercenario::get_contratante() const{
+    return contratante;
+}
+
+//Gladiador:
+int gladiador::get_monstruos_vencidos() const{
+    return monstruos_vencidos;
+}
+std::string gladiador::get_ciudad() const{
+    return ciudad;
+}

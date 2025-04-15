@@ -177,28 +177,41 @@ class barbaro : public guerrero{
 class paladin : public guerrero{
     private:
         std::string prioridad;
-        std::string 
+        std::string acceso;
     public:
-        paladin() : guerrero("Paladín", 10, "Magia", 8, 100) {}
-
+        paladin() : guerrero("Paladín", 10, "Magia", 8, 100), prioridad("Justicia"), acceso("Grandes Hechizos") {}
+        std::string get_prioridad() const;
+        std::string get_acceso() const;
 };
 
-class caballero : public guerrero
-{
-public:
-    caballero() : guerrero("Caballero", 5, "Noble y disciplinado", 5, 100) {}
+class caballero : public guerrero{
+    private:
+        std::string nombre_caballo;
+        std::string material_armadura;
+    public:
+        caballero() : guerrero("Caballero", 5, "Noble y disciplinado", 5, 100), nombre_caballo("Chocolate"), material_armadura("Hierro") {}
+        std::string get_nombre_caballo() const;
+        std::string get_material_armadura() const;
 };
 
-class mercenario : public guerrero
-{
-public:
-    mercenario() : guerrero("Mercenario", 1, "Práctivo", 7, 100) {}
+class mercenario : public guerrero{
+    private: 
+        std::string motivacion;
+        std::string contratante;
+    public:
+        mercenario() : guerrero("Mercenario", 1, "Práctivo", 7, 100), motivacion("Beneficio Económico"), contratante("Países con ejercitos insuficientes") {}
+        std::string get_motivacion() const;
+        std::string get_contratante() const;
 };
 
-class gladiador : public guerrero
-{
-public:
-    gladiador() : guerrero("Gladiador", 4, "Combate con bestias", 6, 100) {}
+class gladiador : public guerrero{
+    private:
+        int monstruos_vencidos;
+        std::string ciudad;
+    public:
+    gladiador() : guerrero("Gladiador", 4, "Combate con bestias", 6, 100), monstruos_vencidos(60), ciudad("Roma") {}
+    int get_monstruos_vencidos() const;
+    std::string get_ciudad() const;
 };
 
 #endif
