@@ -1,10 +1,11 @@
-#include "Ejercicio3-Personaje-Factory.hpp"
-#include "Ejercicio2-Header-Personajes.hpp"
-#include <memory>
+
 #include <iomanip>
+#include <memory>
 #include <string>
 #include <vector>
 #include <stdexcept>
+#include "Personajes.hpp"
+#include "Personaje-Factory.hpp"
 
 
 //Creador de personajes: 

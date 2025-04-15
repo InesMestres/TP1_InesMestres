@@ -1,6 +1,6 @@
-#include "Ejercicio2-Header-Personajes.hpp"
-#include "Ejercicio2-Header-Armas.hpp"
-#include "Ejercicio3-PersonajeFactory.hpp"
+#include "Personajes.hpp"
+#include "Armas.hpp"
+#include "Personaje-Factory.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>

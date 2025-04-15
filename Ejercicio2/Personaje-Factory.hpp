@@ -2,8 +2,8 @@
 #define PERSONAJE_FACTORY_HPP
 
 #include <cstdlib>
-#include "Ejercicio2-Header-Personajes.hpp"
-#include "Ejercicio2-Header-Armas.hpp"
+#include "Personajes.hpp"
+#include "Armas.hpp"
 #include <memory>
 #include <string>
 #include <memory>
