@@ -7,25 +7,26 @@
 
 //interfaz Armas:
 class Arma{
+    protected:
+        std::string nombre;
     public:
-    virtual void usar_arma() = 0;
-    virtual ~Arma() {}
+        Arma(const std::string& nombre);
+        std::string get_nombre() const;
+        virtual void usar_arma() = 0;
+        virtual ~Arma() {}
 };
-
-
 
 //Clase abstracta: items Magicos
 
 class itemMagico: public Arma{
     protected:
-    std::string nombre_itemMagico;
     std::string elemento_itemMagico;
     int destruccion_itemMagico;
     std::string rareza_itemMagico;
     int durabilidad_itemMagico;
 
     public:
-    itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad_itemMagico);
+    itemMagico(const std::string& nombre_itemMagico, const std::string& elemento_itemMagico, int destruccion_itemMagico, const std::string& rareza_itemMagico, int durabilidad_itemMagico);
     std::string get_nombre_itemMagico() const;
     std::string get_elemento_ItemMagico() const;
     int get_destruccion_itemMagico() const;
@@ -62,14 +63,13 @@ class amuleto: public itemMagico{
 
 class armaDeCombate: public Arma{
     protected:
-    std::string nombre_armaCombate;
     std::string material_armaCombate;
     int destruccion_armaCombate;
     std::string rareza_armaCombate;
     int precision_armaCombate;
 
     public:
-    armaDeCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate);
+    armaDeCombate(const std::string& nombre_armaCombate, const std::string& material_armaCombate, int destruccion_armaCombate, const std::string& rareza_armaCombate, int precision_armaCombate);
     std::string get_nombre_armaCombate() const;
     std::string get_material_armaCombate() const;
     int get_destruccion_armaCombate() const;

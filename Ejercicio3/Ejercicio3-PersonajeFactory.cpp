@@ -79,13 +79,13 @@ std::shared_ptr<Arma> PersonajeFactory::crear_arma(const std::string& tipo_arma)
 
 //Creador de personajes con armas: 
 
-std::shared_ptr<Personaje> PersonajeFactory::crear_personaje_armado(const std::string& tipo_personaje, int cantidad_personajes){
+std::shared_ptr<Personaje> PersonajeFactory::crear_personaje_armado(const std::string& tipo_personaje, int cantidad_armas){
     
     std::shared_ptr<Personaje> personaje = crear_personaje(tipo_personaje);
     
     std::vector<std::string> variedad_armas = {"baston", "libro de hechizos", "pocion", "amuleto", "hacha simple", "hacha doble", "espada", "lanza", "garrote"};
     
-    for(int i = 0; i < cantidad_personajes; i++){
+    for(int i = 0; i < cantidad_armas; i++){
         std::string tipo_de_arma = variedad_armas[std::rand() % variedad_armas.size()];
         std::shared_ptr<Arma> arma = crear_arma(tipo_de_arma);
         personaje -> agregar_arma(std::move(arma));

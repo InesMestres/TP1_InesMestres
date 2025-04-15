@@ -2,15 +2,13 @@
 #include "Ejercicio2-Header-Armas.hpp"
 #include <string>
 
-//Funciones Armas:
+//Funciones Armas
+
+Arma::Arma(const std::string& nombre) : nombre(nombre) {}
 
 //Funciones de items magicos:
 
-itemMagico::itemMagico(std::string nombre_itemMagico, std::string elemento_itemMagico, int destruccion_itemMagico, std::string rareza_itemMagico, int durabilidad_itemMagico){}
-
-std::string itemMagico::get_nombre_itemMagico() const{
-    return nombre_itemMagico;
-}
+itemMagico::itemMagico(const std::string& nombre_itemMagico, const std::string& elemento_itemMagico, int destruccion_itemMagico, const std::string& rareza_itemMagico, int durabilidad_itemMagico) : Arma(nombre_itemMagico) {}
 
 std::string itemMagico::get_elemento_ItemMagico() const{
     return elemento_itemMagico;
@@ -29,18 +27,14 @@ int itemMagico::get_durabilidad_itemMagico() const{
 }
 
 void itemMagico::descripcion_itemMagico(){
-    std::cout << "El item mágico: " << nombre_itemMagico << " tiene de principal elemento al: " << elemento_itemMagico << ", una rareza de: " << rareza_itemMagico << ", la cantidad de vidas que quita es: " << destruccion_itemMagico << ", y puese ser utilizado una cantidad total de: " << durabilidad_itemMagico << std::endl;
+    std::cout << "El item mágico: " << nombre << " tiene de principal elemento al: " << elemento_itemMagico << ", una rareza de: " << rareza_itemMagico << ", la cantidad de vidas que quita es: " << destruccion_itemMagico << ", y puese ser utilizado una cantidad total de: " << durabilidad_itemMagico << std::endl;
     return;
 }
 
 
 //Funciones armas de combate:
 
-armaDeCombate::armaDeCombate(std::string nombre_armaCombate, std::string material_armaCombate, int destruccion_armaCombate, std::string rareza_armaCombate, int precision_armaCombate){
-}
-
-std::string armaDeCombate::get_nombre_armaCombate() const{
-    return nombre_armaCombate;
+armaDeCombate::armaDeCombate(const std::string& nombre_armaCombate, const std::string& material_armaCombate, int destruccion_armaCombate, const std::string& rareza_armaCombate, int precision_armaCombate) : Arma(nombre_armaCombate) {
 }
 
 std::string armaDeCombate::get_material_armaCombate() const{
@@ -60,7 +54,7 @@ int armaDeCombate::get_precision_armaCombate() const{
 }
 
 void armaDeCombate::descripcion_armaCombate(){
-    std::cout << "El arma de combate es: " << nombre_armaCombate << "es de rareza:" << rareza_armaCombate << " , esta hecha de material: " << material_armaCombate << " , genera pérdida de vida de: " << destruccion_armaCombate << ", y tiene una presición de: " <<precision_armaCombate << std::endl;
+    std::cout << "El arma de combate es: " << nombre << "es de rareza:" << rareza_armaCombate << " , esta hecha de material: " << material_armaCombate << " , genera pérdida de vida de: " << destruccion_armaCombate << ", y tiene una presición de: " <<precision_armaCombate << std::endl;
     return;
 }
 
@@ -69,6 +63,12 @@ void armaDeCombate::descripcion_armaCombate(){
 //Personajes:
 
 //Personaje funciones: 
+
+Personaje::Personaje(const std::string& tipo, int vida) : tipo_personaje(tipo), vida_personaje(vida) {}
+
+std::string Personaje::get_tipo_personaje() const {
+    return tipo_personaje;
+}
 
 void Personaje::agregar_arma(std::shared_ptr<Arma> arma){
     armas.push_back(arma);
@@ -84,13 +84,19 @@ int Personaje::perder_vida(int cantidad_vidas){
 }
 
 
-
-//Funciones mago:
-mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago): Personaje(){
+void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {
+    atacado->perder_vida(10);
+    if (armas.size() > 0) {
+        std::shared_ptr<Arma> arma_elegida = armas[std::rand() % armas.size()];
+        std::cout << "El " << tipo_personaje << " ataca con " << arma_elegida.get_tipo_arma() << " y hace 10 puntos de daño" << std::endl;
+    } else {
+        std::cout << "El " << tipo_personaje << " ataca y hace 10 puntos de daño" << std::endl;
+    }
 }
 
-std::string mago::get_tipo_mago() const{
-    return tipo_mago;
+
+//Funciones mago:
+mago::mago(const std::string& tipo_mago, int nivel_experiencia_mago, const std::string& especialidad_mago, int energia_mago, int vida_mago): Personaje(){
 }
 
 int mago::get_nivel_experiencia_mago() const{
@@ -105,22 +111,14 @@ int mago::get_energia_mago(){
     return energia_mago;
 }
 
-int mago::get_vida_mago(){
-    return vida_mago;
-}
-
 void mago::descripcion_mago(){
-    std::cout << "El mago es un " << tipo_mago << " , tiene nivel de experiencia: " << nivel_experiencia_mago << " , se especializa en: " << especialidad_mago << " ,en este momento tiene energía: " << energia_mago << " y vida: " << vida_mago << std::endl;
+    std::cout << "El mago es un " << tipo_personaje << " , tiene nivel de experiencia: " << nivel_experiencia_mago << " , se especializa en: " << especialidad_mago << " ,en este momento tiene energía: " << energia_mago << " y vida: " << vida_personaje << std::endl;
     return;
 }
 
 //Funciones Guerreros:
 
-guerrero::guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string especialidad_guerrero, int energia_guerrero, int vida_guerrero){
-}
-
-std::string guerrero::get_tipo_guerrero() const{
-    return tipo_guerrero;
+guerrero::guerrero(const std::string& tipo_guerrero, int nivel_experiencia_guerrero, const std::string& especialidad_guerrero, int energia_guerrero, int vida_guerrero){
 }
 
 int guerrero::get_nivel_experiencia_guerrero() const{
@@ -135,11 +133,7 @@ int guerrero::get_energia_guerrero(){
     return energia_guerrero;
 }
 
-int guerrero::get_vida_guerrero(){
-    return vida_guerrero;
-}
-
 void guerrero::descripcion_guerrero(){
-    std::cout << "Este guerrero es de tipo: " << tipo_guerrero << " , tienen nivel de experiencia: " << nivel_experiencia_guerrero << ", su principal cualidad es: " << cualidad_guerrero << ", en este momento tiene energía: " << energia_guerrero << ", y vida: " << vida_guerrero << std::endl;
+    std::cout << "Este guerrero es de tipo: " << tipo_personaje << " , tienen nivel de experiencia: " << nivel_experiencia_guerrero << ", su principal cualidad es: " << cualidad_guerrero << ", en este momento tiene energía: " << energia_guerrero << ", y vida: " << vida_personaje << std::endl;
     return;
 }
