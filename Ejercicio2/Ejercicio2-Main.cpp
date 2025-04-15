@@ -1,5 +1,5 @@
-#include "Personajes.hpp"
 #include "Armas.hpp"
+#include "Personajes.hpp"
 #include "Personaje-Factory.hpp"
 #include <cstdlib>
 #include <ctime>

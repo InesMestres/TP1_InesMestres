@@ -82,31 +82,46 @@ Representan los tipos de magos concretos disponibles en el juego (hechicero, con
 Cada uno posee atributos: tipo de mago, nivel de experiencia, especialidad mágica, energía y vida actual.ADJ_OFFSET_SINGLESHOT
 */
 
-
-class hechicero : public mago
-{
-public:
-    hechicero() : mago("Hechicero", 4, "Magia elemental", 6, 100) {}
+class hechicero : public mago{
+    private: 
+        std::string vestimenta;
+        std::string gorro;
+    public:
+        hechicero() : mago("Hechicero", 4, "Magia elemental", 6, 100), vestimenta("Manto"), gorro("Sombrero"){}
+        std::string get_vestimenta() const;
+        std::string get_gorro() const;
 };
 
-class conjurador : public mago
-{
-public:
-    conjurador() : mago("Conjurador", 2, "Comunicación con criaturas", 5, 100) {}
+class conjurador : public mago{
+    private:
+        std::string sinonimo;
+        std::string riesgo;
+    public:
+        conjurador() : mago("Conjurador", 2, "Comunicación con criaturas", 5, 100), sinonimo("Exorcista"), riesgo("Aislamiento"){}
+        std::string get_sinonimo() const;
+        std::string get_riesgo() const;
+    };
+
+class brujo : public mago{
+    std::string cualidad;
+    std::string epoca;
+
+    public:
+        brujo() : mago("Brujo", 8, "Magia oscura", 7, 100), cualidad("Buscador de conocimiento"), epoca("Siglo XIV") {}
+        std::string get_cualidad() const;
+        std::string get_epoca() const;
+
 };
 
-class brujo : public mago
-{
-public:
-    brujo() : mago("Brujo", 8, "Magia oscura", 7, 100) {}
-};
-
-class nigromante : public mago
-{
-public:
-    nigromante() : mago("nigromante", 10, "Muerte", 6, 100) {}
-};
-
+class nigromante : public mago{
+    private: 
+        std::string cualidad;
+        std::string pais;
+    public:
+        nigromante() : mago("nigromante", 10, "Muerte", 6, 100), cualidad("Paranoico"), pais("Persia"){}
+        std::string get_cualidad() const;
+        std::string get_pais() const;
+}; 
 
 
 
@@ -149,16 +164,23 @@ Representan los tipos de guerreros concretos disponibles en el juego (barbaro, p
 Cada uno posee atributos: tipo de guerrero, nivel de experiencia, una cualidad del guerrero, energía y vida actual.
 */
 
-class barbaro : public guerrero
-{
-public:
-    barbaro() : guerrero("Barbaro", 8, "Fuerza y resistencia", 9, 100) {}
+class barbaro : public guerrero{
+    private:
+        std::string nombre_rey;
+        int ira;
+    public:
+        barbaro() : guerrero("Barbaro", 8, "Fuerza y resistencia", 9, 100), nombre_rey("Alarico"), ira(100){}
+        std::string get_nombre_rey() const;
+        int get_ira() const;
 };
 
-class paladin : public guerrero
-{
-public:
-    paladin() : guerrero("Paladín", 10, "Magia", 8, 100) {}
+class paladin : public guerrero{
+    private:
+        std::string prioridad;
+        std::string 
+    public:
+        paladin() : guerrero("Paladín", 10, "Magia", 8, 100) {}
+
 };
 
 class caballero : public guerrero

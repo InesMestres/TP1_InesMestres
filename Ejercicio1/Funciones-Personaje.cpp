@@ -36,7 +36,6 @@ void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {
     }
 }
 
-
 //Funciones mago:
 mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago) : Personaje(tipo_mago, vida_mago), nivel_experiencia_mago(nivel_experiencia_mago), especialidad_mago(especialidad_mago), energia_mago(energia_mago) {}
 
@@ -56,6 +55,45 @@ void mago::esta_presente(){
     std::cout << "El mago es un " << tipo_personaje << " , tiene nivel de experiencia: " << nivel_experiencia_mago << " , se especializa en: " << especialidad_mago << " ,en este momento tiene energía: " << energia_mago << " y vida: " << vida_personaje << std::endl;
     return;
 }
+
+
+//FUNCIONES PERSONALIZADAS DE CADA TIPO DE MAGOS: 
+
+//Hechicero: 
+std::string hechicero::get_vestimenta() const{
+    return vestimenta;
+}
+std::string hechicero::get_gorro() const{
+    return gorro;
+}
+
+//Conjurador:
+std::string conjurador::get_sinonimo() const{
+    return sinonimo;
+}
+std::string conjurador::get_riesgo() const{
+    return riesgo;
+}
+
+//Brujo:
+std::string brujo::get_cualidad() const{
+    return cualidad;
+}
+std::string brujo::get_epoca() const{
+    return epoca;
+}
+
+//Nigromante:
+std::string nigromante::get_cualidad() const{
+    return cualidad;
+}
+std::string nigromante::get_pais() const{
+    return pais;
+}
+
+
+//GUERREROS: 
+
 
 //Funciones Guerreros:
 
@@ -77,3 +115,8 @@ void guerrero::esta_presente(){
     std::cout << "Este guerrero es de tipo: " << tipo_personaje << " , tienen nivel de experiencia: " << nivel_experiencia_guerrero << ", su principal cualidad es: " << cualidad_guerrero << ", en este momento tiene energía: " << energia_guerrero << ", y vida: " << vida_personaje << std::endl;
     return;
 }
+
+//FUNCIONES PERSONALIZADAS DE CADA TIPO DE GUERRERO: 
+
+
+

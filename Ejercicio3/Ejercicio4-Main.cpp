@@ -15,8 +15,7 @@ realicen la misma acción, ningún personaje recibirá daño y se pasa a la sigu
 ronda de elección.
 */
 
-
-#include "Ejercicio3-Personaje-Factory.hpp"
+#include "Personaje-Factory.hpp"
 #include <iostream>
 #include <ctime>
 #include <memory>
