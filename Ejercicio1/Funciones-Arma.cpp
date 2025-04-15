@@ -6,17 +6,14 @@
 
 Arma::Arma(const std::string& nombre){}
 
-
-
+std:: string Arma::get_nombre() const{
+    return nombre;
+}
 
 //Funciones de items magicos:
 
 itemMagico::itemMagico(const std::string& nombre_itemMagico, const std::string& elemento_itemMagico, const std::string& rareza_itemMagico, const std::string& color_itemMagico, int destruccion_itemMagico): Arma(nombre_itemMagico), elemento_itemMagico(elemento_itemMagico), rareza_itemMagico(rareza_itemMagico), color_itemMagico(color_itemMagico), destruccion_itemMagico(destruccion_itemMagico){}
 ;
-
-std::string itemMagico::get_nombre_itemMagico() const{
-    return nombre;
-}
 
 std::string itemMagico::get_elemento_ItemMagico() const{
     return elemento_itemMagico;
@@ -44,10 +41,6 @@ void itemMagico::usar_arma(){
 //Funciones armas de combate:
 
 armaDeCombate::armaDeCombate(const std::string& nombre_armaCombate, const std::string& material_armaCombate, const std::string& rareza_armaCombate, int destruccion_armaCombate, int precision_armaCombate): Arma(nombre_armaCombate), material_armaCombate(material_armaCombate), rareza_armaCombate(rareza_armaCombate), destruccion_armaCombate(destruccion_armaCombate), precision_armaCombate(precision_armaCombate) {}
-
-std::string armaDeCombate::get_nombre_armaCombate() const{
-    return nombre;
-}
 
 std::string armaDeCombate::get_material_armaCombate() const{
     return material_armaCombate;
