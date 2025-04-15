@@ -136,6 +136,7 @@ protected:
 
 public:
     guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string cualidad_guerrero, int energia_guerrero, int vida_guerrero);
+    virtual void esta_presente() override;
     int get_nivel_experiencia_guerrero() const;
     std::string get_cualidad_guerrero() const;
     int get_energia_guerrero();
