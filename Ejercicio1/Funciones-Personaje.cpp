@@ -23,6 +23,7 @@ int Personaje::get_vida(){
 int Personaje::perder_vida(int cantidad_vidas){
     vida_personaje -= cantidad_vidas;
     if(vida_personaje <= 0){vida_personaje = 0;}
+    return vida_personaje; 
 }
 
 void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {

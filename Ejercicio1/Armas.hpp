@@ -68,7 +68,6 @@ Heredan de clase abstracta ItemMagico.
 Representan items mágicos concretos del juego.
 Cada instancia configura: nombre del tipo de arma, elemento del arma, rareza del arma, color del arma, destrucción que aporta el arma.
 */
-
 class baston: public itemMagico{
     public:
         baston():itemMagico("Bastón", "Tierra", "Común", "Verde", 5){}

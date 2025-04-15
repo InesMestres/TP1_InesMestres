@@ -4,7 +4,7 @@
 
 //Funciones Armas
 
-Arma::Arma(const std::string& nombre){}
+Arma::Arma(const std::string& nombre): nombre(nombre){}
 
 std:: string Arma::get_nombre() const{
     return nombre;
