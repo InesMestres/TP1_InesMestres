@@ -61,7 +61,6 @@ class itemMagico: public Arma{
         std::string get_color_itemMagico() const;
         int get_destruccion_itemMagico() const;
         void usar_arma() override;
-        void descripcion_itemMagico();
 };
 
 /*Definciones de las subclases concretas de ItemMagico: baston, libroDeHechizos, pocion y amuleto
@@ -127,7 +126,6 @@ class armaDeCombate: public Arma{
         int get_destruccion_armaCombate() const;
         int get_precision_armaCombate() const;
         void usar_arma() override;
-        void descripcion_armaCombate();
 };
 
 

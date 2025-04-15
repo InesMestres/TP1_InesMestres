@@ -16,12 +16,19 @@ derivadas deberán tener al menos 5 atributos y 5 métodos.
 2.3. Considerando que cualquier personaje puede utilizar cualquier arma, realice el
 diagrama UML de clases de esta parte del código.*/
 
-#include <cstdlib>
-#include <ctime>
+#include <iostream>
+#include <memory>
+#include "Armas.hpp"
+#include "Personajes.hpp" 
 
 int main(){
 
-    
+    std::shared_ptr<Arma> arma = std::make_shared<baston>();
+    arma -> usar_arma();
+
+
+    std::shared_ptr<Personaje> mago = std::make_shared<nigromante>();
+    mago -> esta_presente();
 
 
     return 0;

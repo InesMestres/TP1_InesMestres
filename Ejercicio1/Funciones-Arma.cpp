@@ -27,7 +27,7 @@ int itemMagico::get_destruccion_itemMagico() const{
     return destruccion_itemMagico;
 }
 
-void itemMagico::descripcion_itemMagico(){
+void itemMagico::usar_arma(){
     std::cout << "El item mágico: " << nombre << " tiene de principal elemento al: " << elemento_itemMagico << ", una rareza de: " << rareza_itemMagico << ", su color es: " << color_itemMagico << " y la cantidad de vidas que quita es: " << destruccion_itemMagico  << std::endl;
     return;
 }
@@ -53,7 +53,7 @@ int armaDeCombate::get_precision_armaCombate() const{
     return precision_armaCombate;
 }
 
-void armaDeCombate::descripcion_armaCombate(){
+void armaDeCombate::usar_arma(){
     std::cout << "El arma de combate es: " << nombre << "es de rareza:" << rareza_armaCombate << " , esta hecha de material: " << material_armaCombate << " , genera pérdida de vida de: " << destruccion_armaCombate << ", y tiene una presición de: " <<precision_armaCombate << std::endl;
     return;
 }

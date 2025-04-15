@@ -70,10 +70,10 @@ protected:
 
 public:
     mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago) : Personaje(tipo_mago, vida_mago), nivel_experiencia_mago(nivel_experiencia_mago), especialidad_mago(especialidad_mago), energia_mago(energia_mago) {};
+    void esta_presente() override;
     int get_nivel_experiencia_mago() const;
     std::string get_especialidad_mago() const;
     int get_energia_mago();
-    void descripcion_mago();
 };
 
 
@@ -136,10 +136,10 @@ protected:
 
 public:
     guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string cualidad_guerrero, int energia_guerrero, int vida_guerrero) : Personaje(tipo_guerrero, vida_guerrero), nivel_experiencia_guerrero(nivel_experiencia_guerrero), cualidad_guerrero(cualidad_guerrero), energia_guerrero(energia_guerrero) {};
+    void esta_presente() override;
     int get_nivel_experiencia_guerrero() const;
     std::string get_cualidad_guerrero() const;
     int get_energia_guerrero();
-    void descripcion_guerrero();
 };
 
 

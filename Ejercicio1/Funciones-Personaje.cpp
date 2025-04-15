@@ -51,7 +51,7 @@ int mago::get_energia_mago(){
     return energia_mago;
 }
 
-void mago::descripcion_mago(){
+void mago::esta_presente(){
     std::cout << "El mago es un " << tipo_personaje << " , tiene nivel de experiencia: " << nivel_experiencia_mago << " , se especializa en: " << especialidad_mago << " ,en este momento tiene energía: " << energia_mago << " y vida: " << vida_personaje << std::endl;
     return;
 }
@@ -72,7 +72,7 @@ int guerrero::get_energia_guerrero(){
     return energia_guerrero;
 }
 
-void guerrero::descripcion_guerrero(){
+void guerrero::esta_presente(){
     std::cout << "Este guerrero es de tipo: " << tipo_personaje << " , tienen nivel de experiencia: " << nivel_experiencia_guerrero << ", su principal cualidad es: " << cualidad_guerrero << ", en este momento tiene energía: " << energia_guerrero << ", y vida: " << vida_personaje << std::endl;
     return;
 }
