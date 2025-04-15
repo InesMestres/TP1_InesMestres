@@ -54,7 +54,7 @@ class itemMagico: public Arma{
         int destruccion_itemMagico;
 
     public:
-        itemMagico(const std::string& nombre_itemMagico, const std::string& elemento_itemMagico, const std::string& rareza_itemMagico, const std::string& color_itemMagico, int destruccion_itemMagico);
+        itemMagico(const std::string& nombre_itemMagico, const std::string& elemento_itemMagico, const std::string& rareza_itemMagico, const std::string& color_itemMagico, int destruccion_itemMagico): Arma(nombre_itemMagico), elemento_itemMagico(elemento_itemMagico), rareza_itemMagico(rareza_itemMagico), color_itemMagico(color_itemMagico), destruccion_itemMagico(destruccion_itemMagico){}
         std::string get_nombre_itemMagico() const;
         std::string get_elemento_ItemMagico() const;
         std::string get_rareza_itemMagico() const;
@@ -63,7 +63,6 @@ class itemMagico: public Arma{
         void usar_arma() override;
         void descripcion_itemMagico();
 };
-
 
 /*Definciones de las subclases concretas de ItemMagico: baston, libroDeHechizos, pocion y amuleto
 Heredan de clase abstracta ItemMagico. 
@@ -121,7 +120,7 @@ class armaDeCombate: public Arma{
         int precision_armaCombate;
 
     public:
-        armaDeCombate(const std::string& nombre_armaCombate, const std::string& material_armaCombate, const std::string& rareza_armaCombate, int destruccion_armaCombate, int precision_armaCombate);
+        armaDeCombate(const std::string& nombre_armaCombate, const std::string& material_armaCombate, const std::string& rareza_armaCombate, int destruccion_armaCombate, int precision_armaCombate): Arma(nombre_armaCombate), material_armaCombate(material_armaCombate), rareza_armaCombate(rareza_armaCombate), destruccion_armaCombate(destruccion_armaCombate), precision_armaCombate(precision_armaCombate) {}
         std::string get_nombre_armaCombate() const;
         std::string get_material_armaCombate() const;
         std::string get_rareza_armaCombate() const;

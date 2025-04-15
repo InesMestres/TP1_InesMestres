@@ -1,64 +1,6 @@
-#include "Ejercicio2-Header-Personajes.hpp"
-#include "Ejercicio2-Header-Armas.hpp"
+#include "Personajes.hpp"
+#include "Armas.hpp"
 #include <string>
-
-//Funciones Armas
-
-Arma::Arma(const std::string& nombre) : nombre(nombre) {}
-
-//Funciones de items magicos:
-
-itemMagico::itemMagico(const std::string& nombre_itemMagico, const std::string& elemento_itemMagico, int destruccion_itemMagico, const std::string& rareza_itemMagico, int durabilidad_itemMagico) : Arma(nombre_itemMagico) {}
-
-std::string itemMagico::get_elemento_ItemMagico() const{
-    return elemento_itemMagico;
-}
-
-int itemMagico::get_destruccion_itemMagico() const{
-    return destruccion_itemMagico;
-}
-
-std::string itemMagico::get_rareza_itemMagico() const{
-    return rareza_itemMagico;
-}
-
-int itemMagico::get_durabilidad_itemMagico() const{
-    return durabilidad_itemMagico;
-}
-
-void itemMagico::descripcion_itemMagico(){
-    std::cout << "El item mágico: " << nombre << " tiene de principal elemento al: " << elemento_itemMagico << ", una rareza de: " << rareza_itemMagico << ", la cantidad de vidas que quita es: " << destruccion_itemMagico << ", y puese ser utilizado una cantidad total de: " << durabilidad_itemMagico << std::endl;
-    return;
-}
-
-
-//Funciones armas de combate:
-
-armaDeCombate::armaDeCombate(const std::string& nombre_armaCombate, const std::string& material_armaCombate, int destruccion_armaCombate, const std::string& rareza_armaCombate, int precision_armaCombate) : Arma(nombre_armaCombate) {
-}
-
-std::string armaDeCombate::get_material_armaCombate() const{
-    return material_armaCombate;
-}
-
-int armaDeCombate::get_destruccion_armaCombate() const{
-    return destruccion_armaCombate;
-}
-
-std::string armaDeCombate::get_rareza_armaCombate() const{
-    return rareza_armaCombate;
-}
-
-int armaDeCombate::get_precision_armaCombate() const{
-    return precision_armaCombate;
-}
-
-void armaDeCombate::descripcion_armaCombate(){
-    std::cout << "El arma de combate es: " << nombre << "es de rareza:" << rareza_armaCombate << " , esta hecha de material: " << material_armaCombate << " , genera pérdida de vida de: " << destruccion_armaCombate << ", y tiene una presición de: " <<precision_armaCombate << std::endl;
-    return;
-}
-
-
 
 //Personajes:
 

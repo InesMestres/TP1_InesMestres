@@ -21,8 +21,6 @@ diagrama UML de clases de esta parte del código.*/
 
 int main(){
 
-    std::rand(std::time(0));
-
     
 
 
