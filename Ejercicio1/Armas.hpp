@@ -69,23 +69,44 @@ Representan items mágicos concretos del juego.
 Cada instancia configura: nombre del tipo de arma, elemento del arma, rareza del arma, color del arma, destrucción que aporta el arma.
 */
 class baston: public itemMagico{
+    private:
+        int largo;
+        int peso;
     public:
-        baston():itemMagico("Bastón", "Tierra", "Común", "Verde", 5){}
+        baston():itemMagico("Bastón", "Tierra", "Común", "Verde", 5), largo(80), peso(4){}
+        int get_largo() const;
+        int get_peso() const;
+        void usar_arma();
 };
 
 class libroDeHechizos: public itemMagico{
+        int cantidad_hojas;
+        std::string idioma;
     public:
-        libroDeHechizos():itemMagico("Libro de Hechizos", "Aire", "Muy Raro", "Azul", 2){}
-};
+        libroDeHechizos():itemMagico("Libro de Hechizos", "Aire", "Muy Raro", "Azul", 2), cantidad_hojas(800), idioma("Latín"){}
+        int get_cantidad_hojas() const;
+        std::string get_idioma() const;
+        void usar_arma();
+    };
 
 class pocion: public itemMagico{
+        std::string efecto;
+        std::string ingrediente_secreto;
     public:
-        pocion():itemMagico("Poción", "Agua", "Común", "Violeta", 4){}
+        pocion():itemMagico("Poción", "Agua", "Común", "Violeta", 4), efecto("Venenoso"), ingrediente_secreto("Huevo de Dragón") {}
+        std::string get_efecto() const;
+        std::string get_ingrediente_secreto() const;
+        void usar_arma();
 };
 
 class amuleto: public itemMagico{
+        std::string tipo_piedra;
+        std::string poder;
     public:
-        amuleto():itemMagico("Amuleto", "Tierra", "Raro", "Esmeralda", 3){}
+        amuleto():itemMagico("Amuleto", "Tierra", "Raro", "Esmeralda", 3), tipo_piedra("Ojo de Tigre"), poder("Aumenta daño de un golpe"){}
+        std::string get_tipo_piedra() const;
+        std::string get_poder() const;
+        void usar_arma();
 };
 
 
@@ -135,28 +156,59 @@ Cada instancia configura: nombre del tipo de arma, material del arma, rareza del
 */
 
 class hachaSimple: public armaDeCombate{
+    private:
+        int nivel_filo;
+        int peso;
     public:
-    hachaSimple():armaDeCombate("Hacha Simple", "Madera", "Común", 3, 4){}
+        hachaSimple():armaDeCombate("Hacha Simple", "Madera", "Común", 3, 4), nivel_filo(2), peso(3){}
+        int get_nivel_filo() const;
+        int get_peso() const;
+        void usar_arma();
+
 };
 
 class hachaDoble: public armaDeCombate{
+    private:
+        int nivel_filo;
+        int peso;
     public:
-    hachaDoble():armaDeCombate("Hacha Doble", "Metal", "Raro", 8, 4){}
+        hachaDoble():armaDeCombate("Hacha Doble", "Metal", "Raro", 8, 4), nivel_filo(4), peso(6) {}
+        int get_nivel_filo() const;
+        int get_peso() const;
+        void usar_arma();
 };
 
 class espada: public armaDeCombate{
+    private:
+        std::string forma;
+        int longitud;
     public:
-    espada():armaDeCombate("Espada", "Metal", "Muy Raro", 10, 8){}
+        espada():armaDeCombate("Espada", "Metal", "Muy Raro", 10, 8), forma("Trébol"), longitud(1){}
+        std::string get_forma() const;
+        int get_longitud() const;
+        void usar_arma();
 };
 
 class lanza: public armaDeCombate{
+    private: 
+        std::string forma_punta;
+        std::string lugar_origen;
     public:
-    lanza():armaDeCombate("Lanza", "Madera", "Raro", 7, 2){}
+        lanza():armaDeCombate("Lanza", "Madera", "Raro", 7, 2), forma_punta("Diamante"), lugar_origen("África"){}
+        std::string get_forma_punta() const;
+        std::string get_lugar_origen() const;
+        void usar_arma();
 };
 
 class garrote: public armaDeCombate{
+    private:
+        std::string uso;
+        std::string epoca_utilizacion;
     public:
-    garrote():armaDeCombate("Garrote", "Madera", "Común", 6, 7){}
-};
+        garrote():armaDeCombate("Garrote", "Madera", "Común", 6, 7), uso("Tortura"), epoca_utilizacion("La Inquisición"){}
+        std::string get_uso() const;
+        std::string get_epoca_utilizacion() const;
+        void usar_arma();
+    };
 
 #endif
