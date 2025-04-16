@@ -2,10 +2,10 @@
 #include "Armas.hpp"
 #include <string>
 
-//Personajes:
+//CLASE BASE: PERSONAJES:
 
 
-//Personaje funciones: 
+//PERSONAJE FUNCIONES
 
 Personaje::Personaje(const std::string& tipo, int vida) : tipo_personaje(tipo), vida_personaje(vida) {}
 
@@ -37,7 +37,12 @@ void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {
     }
 }
 
-//Funciones mago:
+
+
+
+
+//FUNCIONES CLASE ABSTRACTA MAGO:
+
 mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago) : Personaje(tipo_mago, vida_mago), nivel_experiencia_mago(nivel_experiencia_mago), especialidad_mago(especialidad_mago), energia_mago(energia_mago) {}
 
 int mago::get_nivel_experiencia_mago() const{
@@ -55,7 +60,6 @@ int mago::get_energia_mago(){
 
 
 //FUNCIONES PERSONALIZADAS DE CADA TIPO DE MAGO:
-
 
 //Hechicero: 
 std::string hechicero::get_vestimenta() const{
@@ -108,10 +112,12 @@ void nigromante::esta_presente(){
 
 
 
+
+
 //GUERREROS: 
 
 
-//Funciones Guerreros:
+//FUNCIONES CLASE ABSTRACTA GUERRERO:
 
 guerrero::guerrero(std::string tipo_guerrero, int nivel_experiencia_guerrero, std::string cualidad_guerrero, int energia_guerrero, int vida_guerrero) : Personaje(tipo_guerrero, vida_guerrero), nivel_experiencia_guerrero(nivel_experiencia_guerrero), cualidad_guerrero(cualidad_guerrero), energia_guerrero(energia_guerrero){}
 
@@ -127,10 +133,6 @@ int guerrero::get_energia_guerrero(){
     return energia_guerrero;
 }
 
-void guerrero::esta_presente(){
-    std::cout << "Este guerrero es de tipo: " << tipo_personaje << " , tienen nivel de experiencia: " << nivel_experiencia_guerrero << ", su principal cualidad es: " << cualidad_guerrero << ", en este momento tiene energía: " << energia_guerrero << ", y vida: " << vida_personaje << std::endl;
-    return;
-}
 
 //FUNCIONES PERSONALIZADAS DE CADA TIPO DE GUERRERO: 
 
@@ -142,6 +144,10 @@ int barbaro::get_ira() const{
     return ira;
 }
 
+void barbaro::esta_presente(){
+    std::cout << "Tipo Guerrero: " << tipo_personaje  << " - Nombre: " << nombre_rey << " - Nivel de Experiencia: " << nivel_experiencia_guerrero << " - Principal Cualidad: " << cualidad_guerrero << " - Nivel Energía: " << energia_guerrero << " Vida: " << vida_personaje << " - Nivel ira: " << ira << std::endl;
+    return;
+}
 
 //Paladin:
 std::string paladin::get_prioridad() const{
@@ -149,6 +155,10 @@ std::string paladin::get_prioridad() const{
 }
 std::string paladin::get_acceso() const{
     return acceso;
+}
+void paladin::esta_presente(){
+    std::cout << "Tipo Guerrero: " << tipo_personaje << " - Nivel de Experiencia: " << nivel_experiencia_guerrero << " - Principal Cualidad: " << cualidad_guerrero << " - Prioridad: " << prioridad << " - Arma Secreta: " << acceso << " - Nivel Energía: " << energia_guerrero << " Vida: " << vida_personaje << std::endl;
+    return;
 }
 
 //Caballero:
@@ -158,6 +168,10 @@ std::string caballero::get_nombre_caballo() const{
 std::string caballero::get_material_armadura() const{
     return material_armadura;
 }
+void caballero::esta_presente(){
+    std::cout << "Tipo Guerrero: " << tipo_personaje << " - Nivel de Experiencia: " << nivel_experiencia_guerrero << " - Principal Cualidad: " << cualidad_guerrero << " - Nombre Caballo: " << nombre_caballo << " - Material Armadura: " << material_armadura << " - Nivel Energía: " << energia_guerrero << " Vida: " << vida_personaje << std::endl;
+    return;
+}
 
 //Mercenario:
 std::string mercenario::get_motivacion() const{
@@ -166,6 +180,10 @@ std::string mercenario::get_motivacion() const{
 std::string mercenario::get_contratante() const{
     return contratante;
 }
+void mercenario::esta_presente(){
+    std::cout << "Tipo Guerrero: " << tipo_personaje << " - Nivel de Experiencia: " << nivel_experiencia_guerrero << " - Principal Cualidad: " << cualidad_guerrero << " - Motivación: " << motivacion << " - Contratante: " << contratante << " - Nivel Energía: " << energia_guerrero << " Vida: " << vida_personaje << std::endl;
+    return;
+}
 
 //Gladiador:
 int gladiador::get_monstruos_vencidos() const{
@@ -173,4 +191,8 @@ int gladiador::get_monstruos_vencidos() const{
 }
 std::string gladiador::get_ciudad() const{
     return ciudad;
+}
+void gladiador::esta_presente(){
+    std::cout << "Tipo Guerrero: " << tipo_personaje << " - Nivel de Experiencia: " << nivel_experiencia_guerrero << " - Monstruos Vencidos: " << monstruos_vencidos << " - Principal Cualidad: " << cualidad_guerrero  << " - Ciudad: " << ciudad << " - Nivel Energía: " << energia_guerrero << " Vida: " << vida_personaje << std::endl;
+    return;
 }
