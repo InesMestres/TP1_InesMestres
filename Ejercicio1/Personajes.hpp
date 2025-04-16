@@ -74,6 +74,8 @@ public:
     int get_nivel_experiencia_mago() const;
     std::string get_especialidad_mago() const;
     int get_energia_mago();
+    virtual ~mago() override;
+
 };
 
 
@@ -158,6 +160,7 @@ public:
     int get_nivel_experiencia_guerrero() const;
     std::string get_cualidad_guerrero() const;
     int get_energia_guerrero();
+    virtual ~guerrero() override;
 };
 
 

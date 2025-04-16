@@ -40,6 +40,8 @@ int itemMagico::get_destruccion_itemMagico() const{
     return destruccion_itemMagico;
 }
 
+itemMagico::~itemMagico(){}
+
 //-------------------------------//
 
 //FUNCIONES ESPECIFICAS DE CADA ITEM MAGICO:
@@ -118,6 +120,7 @@ int armaDeCombate::get_precision_armaCombate() const{
     return precision_armaCombate;
 }
 
+armaDeCombate::~armaDeCombate() {}
 
 
 //-------------------------------//
