@@ -16,7 +16,6 @@ std:: string Arma::get_nombre() const{
 
 
 
-
 //----------------------------------------------------------------------------------------------//
 
 //FUNCIONES DE CLASE ABSTRACTA ITEM MAGICO:
@@ -39,6 +38,12 @@ std::string itemMagico::get_color_itemMagico() const{
 int itemMagico::get_destruccion_itemMagico() const{
     return destruccion_itemMagico;
 }
+
+void itemMagico::usar_arma() {
+    std::cout << "Usando el Item Mágico: " << nombre << std::endl;
+    return;
+}
+
 
 itemMagico::~itemMagico(){}
 
@@ -118,6 +123,11 @@ int armaDeCombate::get_destruccion_armaCombate() const{
 
 int armaDeCombate::get_precision_armaCombate() const{
     return precision_armaCombate;
+}
+
+void armaDeCombate::usar_arma() {
+    std::cout << "Usando el Arma de Combate: " << nombre << std::endl;
+    return;
 }
 
 armaDeCombate::~armaDeCombate() {}

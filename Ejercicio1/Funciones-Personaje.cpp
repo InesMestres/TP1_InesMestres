@@ -41,6 +41,7 @@ void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {
 
 
 
+
 //FUNCIONES CLASE ABSTRACTA MAGO:
 
 mago::mago(std::string tipo_mago, int nivel_experiencia_mago, std::string especialidad_mago, int energia_mago, int vida_mago) : Personaje(tipo_mago, vida_mago), nivel_experiencia_mago(nivel_experiencia_mago), especialidad_mago(especialidad_mago), energia_mago(energia_mago) {}
@@ -56,6 +57,14 @@ std::string mago::get_especialidad_mago() const{
 int mago::get_energia_mago(){
     return energia_mago;
 }
+
+void mago::esta_presente() {
+    std::cout << "Esta presente un Mago: " << tipo_personaje << std::endl;
+    return;
+}
+
+mago::~mago() {}
+
 
 
 
@@ -132,6 +141,13 @@ std::string guerrero::get_cualidad_guerrero() const{
 int guerrero::get_energia_guerrero(){
     return energia_guerrero;
 }
+
+void guerrero::esta_presente(){
+    std::cout << "Esta presente un Guerrero: " << tipo_personaje << std::endl;
+    return;
+}
+
+guerrero::~guerrero() {}
 
 
 //FUNCIONES PERSONALIZADAS DE CADA TIPO DE GUERRERO: 
