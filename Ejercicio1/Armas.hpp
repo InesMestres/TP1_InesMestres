@@ -69,6 +69,8 @@ class itemMagico: public Arma{
 Heredan de clase abstracta ItemMagico. 
 Representan items mágicos concretos del juego.
 Cada instancia configura: nombre del tipo de arma, elemento del arma, rareza del arma, color del arma, destrucción que aporta el arma.
+Además, cada instancia configura dos atributos y métodos propios (especiales de cada subclase)
+Además, se inicia una función usar_arma() que imprime valores.
 */
 class baston: public itemMagico{
     private:
@@ -156,6 +158,8 @@ class armaDeCombate: public Arma{
 Heredan de clase abstracta armaDeCombate. 
 Representan armas de combate concretas del juego.
 Cada instancia configura: nombre del tipo de arma, material del arma, rareza del arma, destrucción que aporta el arma, y su precisión de ataque.
+Además, cada instancia configura dos atributos y métodos propios (especiales de cada subclase)
+Además, se inicia una función usar_arma() que imprime valores.
 */
 
 class hachaSimple: public armaDeCombate{
