@@ -31,7 +31,6 @@ void describir_estado_personajes(const std::shared_ptr<Personaje>& jugador1, con
 std::string jugador1_eleccionAtaque(){
     std::cout << "Jugador 1, elija su ataque entre: Golpe Fuerte, Golpe Rapido, Defensa y Golpe: " << std::endl;
     std::string ataque1;
-    std::cin.ignore();
     std::getline(std::cin, ataque1);
     while(ataque1 != "Golpe Fuerte" &&  ataque1 != "Golpe Rapido" && ataque1 != "Defensa y Golpe"){
         std::cout << "Ataque inválido, elija entre: Golpe Fuerte, Golpe Rapido, Defensa y Golpe" << std::endl;

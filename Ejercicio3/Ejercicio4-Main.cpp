@@ -10,7 +10,6 @@
 int main(){
 
     std::srand(std::time(nullptr));
-    std::cin.ignore();
 
     //Creo 2 jugadores con su tipo de personaje y sus determinadas cantidades de armas:
     auto [jugador1, tipo_personaje1, cantidad_armas1, jugador2, tipo_personaje2, cantidad_armas2] = crear_personajes();
