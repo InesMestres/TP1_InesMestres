@@ -10,7 +10,7 @@
 std::tuple<std::shared_ptr<Personaje>, std::string, int, std::shared_ptr<Personaje>, std::string, int> crear_personajes();
 
 //Describe a los personajes: su tipo, su cantidad de vida actual y su cantidad de armas:
-void describir_estado_personajes(const std::shared_ptr<Personaje>& jugador1, const std::string& tipo_personaje1, int cantidad_armas1, const std::shared_ptr<Personaje>& jugador2, const std::string& tipo_personaje2, int cantidad_armas2);
+void describir_estado_personajes(const std::unique_ptr<Personaje>& jugador1, const std::string& tipo_personaje1, int cantidad_armas1, const std::unique_ptr<Personaje>& jugador2, const std::string& tipo_personaje2, int cantidad_armas2);
 
 //El jugador 1 elige un ataque de los tres posibles:
 std::string jugador1_eleccionAtaque();
@@ -19,10 +19,10 @@ std::string jugador1_eleccionAtaque();
 std::string jugador2_ataqueRandom();
 
 //Se comparan los ataques de los dos jugadores que se enfrentan
-void combate_comparacionAtaques(const std::shared_ptr<Personaje>& jugador1, const std::string& ataque1, const std::shared_ptr<Personaje>& jugador2, const std::string& ataque2);
+void combate_comparacionAtaques(const std::unique_ptr<Personaje>& jugador1, const std::string& ataque1, const std::unique_ptr<Personaje>& jugador2, const std::string& ataque2);
 
 //Se imprimen los resultados (el ganador). 
-void resultados(const std::shared_ptr<Personaje>& jugador1);
+void resultados(const std::unique_ptr<Personaje>& jugador1);
 
 
 #endif
