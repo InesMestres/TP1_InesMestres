@@ -15,6 +15,7 @@ std:: string Arma::get_nombre() const{
 
 
 
+
 //----------------------------------------------------------------------------------------------//
 
 //FUNCIONES DE CLASE ABSTRACTA ITEM MAGICO:

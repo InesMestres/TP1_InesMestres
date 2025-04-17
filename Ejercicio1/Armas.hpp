@@ -22,6 +22,7 @@ class Arma{
         Arma(const std::string& nombre);
         std::string get_nombre() const;
         virtual void usar_arma() = 0;
+        virtual int get_destruccion() const = 0;
         virtual ~Arma() {}
 };
 

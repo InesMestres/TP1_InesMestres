@@ -31,13 +31,17 @@ int Personaje::perder_vida(int cantidad_vidas){
 
 //Permite a un personaje atacar a otro:
 void Personaje::atacar_personaje(std::shared_ptr<Personaje> atacado) {
-    atacado->perder_vida(10);
+    int daño = 10;
     if (armas.size() > 0) {
         std::shared_ptr<Arma> arma_elegida = armas[std::rand() % armas.size()];
+        int daño_arma = arma_elegida -> get_destruccion_itemMagico();
+        daño += daño_arma;
         std::cout << "El " << tipo_personaje << " ataca con " << arma_elegida -> get_nombre() << " y hace 10 puntos de daño" << std::endl;
     } else {
         std::cout << "El " << tipo_personaje << " ataca y hace 10 puntos de daño" << std::endl;
     }
+    atacado->perder_vida(daño);
+
 }
 
 
